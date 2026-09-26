@@ -1,0 +1,6 @@
+{
+  "name": "Iron Culture Fitness",
+  "description": "Premium industrial strength fitness center in Gulistan-e-Johar, Karachi. Rated 4.8★ with expert coaching, well-maintained iron equipment, and free admission until 31st July 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

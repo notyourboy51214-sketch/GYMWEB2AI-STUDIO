@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Oswald', sans-serif;
+  --font-sans: 'Work Sans', sans-serif;
+}
+
+:root {
+  font-family: 'Work Sans', sans-serif;
+  color-scheme: dark;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Metallic sheen sweep across buttons on hover */
+.sheen-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  transform: skewX(-25deg);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.sheen-btn:hover::after {
+  transform: translateX(350%) skewX(-25deg);
+}
+
+/* Sharp-edged industrial shadow lift */
+.sharp-card {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.sharp-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0px 0px #C84B19;
+  border-color: #C84B19 !important;
+}
+
+/* Hard industrial card lift without orange if subtle */
+.sharp-card-subtle {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sharp-card-subtle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px 0px #353A42;
+}
+
+/* Limited-Time Offer Pulse border */
+@keyframes promo-pulsing-border {
+  0%, 100% {
+    border-color: rgba(200, 75, 25, 0.35);
+    box-shadow: inset 0 0 10px rgba(200, 75, 25, 0.05);
+  }
+  50% {
+    border-color: rgba(200, 75, 25, 0.9);
+    box-shadow: inset 0 0 24px rgba(200, 75, 25, 0.2), 0 0 16px rgba(200, 75, 25, 0.15);
+  }
+}
+
+.promo-pulse {
+  animation: promo-pulsing-border 2.4s infinite ease-in-out;
+}
+
+/* Square corners rule verification */
+* {
+  border-radius: 0px !important;
+}
